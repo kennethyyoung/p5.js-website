@@ -10,4 +10,7 @@ Main Nav links related files
   
 *  src/components/Nav/NavPanels
 
-MainNavLinks needs a .current
+MainNavLinks needs a .current (Current active window)
+
+Underline on hover can be found in styles/global.scss/
+  a > &:hover
