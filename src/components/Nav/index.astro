@@ -19,6 +19,8 @@ const mainLinks = [
   { url: "/about/", label: t("About") },
 ] as { url: string; label: string }[];
 
+const currentPath = mainLinks.find((link) => pathMinusLocale.startsWith(link.url))?.url ?? "";
+
 const editorButtonLabel = t("Start Coding");
 const donateButtonLabel = t("Donate");
 const mobileMenuLabel = t("Menu");
@@ -37,6 +39,7 @@ const jumpToLabel = t("Jump To");
     mobileMenuLabel={mobileMenuLabel as string}
     jumpToLabel={jumpToLabel as string}
     jumpToState={jumpToState}
+    currentPath={currentPath} 
     client:load
   />
 </nav>
