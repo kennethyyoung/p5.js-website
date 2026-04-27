@@ -14,7 +14,6 @@ type MainNavLinksProps = {
   hasJumpTo: boolean;
   handleToggle: () => void;
   isOpen: boolean;
-  currentPath: string;
 };
 
 export const MainNavLinks = ({
@@ -26,7 +25,6 @@ export const MainNavLinks = ({
   handleToggle,
   isOpen,
   hasJumpTo,
-  currentPath,
 }: MainNavLinksProps) => {
   if (!links || links?.length <= 0) return null;
 
@@ -76,10 +74,8 @@ export const MainNavLinks = ({
       {renderLogo()}
       <ul>
         {links.map((link) => (
-          <li key={link.label} class={styles.linklabel}>
-            <a href={link.url} class={currentPath === link.url ? "current" : ""}>
-              {link.label}
-            </a>
+          <li key={link.label}>
+            <a href={link.url}>{link.label}</a>
           </li>
         ))}
       </ul>

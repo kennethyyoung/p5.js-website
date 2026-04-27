@@ -14,7 +14,6 @@ interface NavPanelsProps {
   jumpToLabel: string;
   isHomepage: boolean;
   jumpToState: JumpToState | null;
-  currentPath: string;
 }
 
 /**
@@ -31,7 +30,6 @@ export const NavPanels = (props: NavPanelsProps) => {
     mobileMenuLabel,
     jumpToLabel,
     jumpToState,
-    currentPath,
   } = props;
 
   const [isOpen, setIsOpen] = useState({ main: false, jump: false });
@@ -92,7 +90,6 @@ export const NavPanels = (props: NavPanelsProps) => {
         hasJumpTo={jumpToState !== null}
         isOpen={isOpen.main}
         handleToggle={handleMainNavToggle}
-        currentPath={currentPath}
       />
       <JumpToLinks
         heading={jumpToState?.heading || jumpToLabel}
